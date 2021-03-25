@@ -4,10 +4,15 @@ namespace Factory
 {
     abstract class Logistics
     {
+        private Transport t;
         public abstract Transport createTransport();
 
         public void planDelivery() {
-            Transport t = createTransport();
+            this.t = createTransport();
+        }
+
+        public void Deliver() {
+            t.Deliver();
         }
     }
 
